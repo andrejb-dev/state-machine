@@ -19,7 +19,7 @@ public class Machine {
     /**
      * Starts the machine by entering and executing the first state
      */
-    public void runMachine() {
+    public void startMachine() {
         this.currentState.enterState(this);
         while (currentState != null) {            
             this.currentState.executeState(this);
