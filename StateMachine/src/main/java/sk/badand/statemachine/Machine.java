@@ -17,7 +17,7 @@ public class Machine {
     }
     
     /**
-     * Starts the machine by entering and executing the first state
+     * Starts the machine by entering the first state and calling the executeState while there is any state present
      */
     public void startMachine() {
         this.currentState.enterState(this);
@@ -26,6 +26,11 @@ public class Machine {
         }
     }
     
+    /**
+     * Changes the current state of the machine to the provided newState.
+     * Before this change the exitState() is called on the old state (currentState).
+     * After the change, the enterState is called on the newState.
+     */
     public void changeToState(State newState) {
         this.currentState.exitState(this);
         
@@ -35,6 +40,11 @@ public class Machine {
         }
     }
     
+    /**
+     * Stops the machine execution by setting the currentState to null
+     * Before that the exitState() is called on the last state (currentState).
+     * Should be called on the last (finishing) implementation of State interface.
+     */
     public void stopMachine(){
         this.currentState.exitState(this);
         this.currentState = null;
