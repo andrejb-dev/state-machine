@@ -27,4 +27,6 @@ public interface State {
      * Is called at exiting from this state
      */
     public void exitState(Machine machine);
+    
+    // TODO: think of method decideNextState that should force the state implementation to provide the state and execute the changeToState inside machine as private method
 }
