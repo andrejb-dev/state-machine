@@ -28,7 +28,7 @@ public class MainTest {
      * Providing abstract implementation of state with default behaviour (here just logging the executed method)
      * No need to use such abstract implementation in real projects, but its recomended for reusing common functionality
      */
-    class AbstractState implements State {
+    static class AbstractState implements State {
 
         @Override
         public final void enterState(Machine machine) {
